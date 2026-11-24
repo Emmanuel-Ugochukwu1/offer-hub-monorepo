@@ -193,7 +193,7 @@ Full page (1440px light): [before](https://raw.githubusercontent.com/Emmanuel-Ug
 
 - `content/docs/guide/deposits.mdx` still embeds `<StaticDiagram name="deposit-airtm-flow" />`. Because this PR deletes that SVG, `/docs/guide/deposits` now renders the component's "Diagram not found" fallback (see the deposits screenshot). The page is owned by the deposits docs issue. Before merge, either land that rewrite first or remove the one-line reference here.
 - `content/docs/guide/withdrawals.mdx` still has the caption "Solid edges are the AirTM path..." while the re-rendered diagram is crypto-only. The page is owned by the withdrawals docs issue; its rewrite should update the caption.
-- `src/lib/__tests__/scaffolder-doc.test.ts` still has 3 "airtm" references. It is not in the "Files owned" list and is not assigned to another docs issue, so it needs a follow-up.
+- `src/lib/__tests__/scaffolder-doc.test.ts` asserts the AirTM prompts from `guide/scaffolder`. It is coupled to the scaffolder docs page (owned by another issue) and will need updating there when that page is rewritten.
 
 ## 📄 Files still containing "airtm" (owned by other docs issues)
 
