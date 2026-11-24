@@ -115,6 +115,16 @@ The only remaining hit is the redirect source in `next.config.ts`, which must co
 | `npm run docs:index` | 0 | `Generated search index with 1107 entries`; no `guide/airtm` entry. |
 | `npm run diagrams` | 0 | 5 diagrams generated; `git status --short` is clean. |
 
+### CI note
+
+The `Generated diagrams up to date` check fails before it reaches the diagram comparison:
+
+```
+E: Version '2.42.2-9ubuntu0.1' for 'graphviz' was not found
+```
+
+The workflow pins `graphviz=2.42.2-9ubuntu0.1` (`.github/workflows/ci.yml:77`), but the current Ubuntu 26.04 runner only offers `graphviz-tools`. This is an infrastructure issue on `main`, not a diff from this PR. Locally, with graphviz 2.42.4 and scour 0.38.2, `npm run diagrams` regenerates all 5 diagrams and `git status --short` is clean. The other 6 checks pass (Backend Build, Frontend Build, GitGuardian, OpenAPI staleness, dependency audit, a11y).
+
 ## 🔍 Evidence/Media (screenshots/videos)
 
 All screenshots are before/after composites. Each composite is the changed region at 1440px and 390px, in light and dark. Full-page images are in the `pr-1759-screenshots` branch under `screenshots/pr-1759/{base,head}/`.
