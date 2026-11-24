@@ -86,7 +86,7 @@ $ grep -n "guide/airtm" src/data/docs-index.json
 (no output)
 ```
 
-The regenerated index still contains 109 "airtm" strings from pages owned by other docs issues (listed at the bottom); the deleted page itself is gone.
+The regenerated index still contains 109 lines with "airtm" (169 occurrences across 87 index entries) from pages owned by other docs issues (listed at the bottom); the deleted page itself is gone.
 
 ## 🧪 Verification
 
